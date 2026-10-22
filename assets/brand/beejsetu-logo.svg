@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" fill="none" role="img" aria-label="BeejSetu Logo">
+  <!-- Mark / Emblem -->
+  <g transform="translate(4, 6)">
+    <!-- Soil / Bridge Arch Base -->
+    <path d="M 4 44 C 14 38, 38 38, 48 44" stroke="#A44A29" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Seed Body -->
+    <path d="M 26 38 C 21 34, 18 28, 19 21 C 20 14, 26 8, 26 8 C 26 8, 32 14, 33 21 C 34 28, 31 34, 26 38 Z" fill="#D49938" fill-opacity="0.25" stroke="#D49938" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Central Germination Sprout Leaf (Left) -->
+    <path d="M 26 24 C 23 20, 16 19, 13 22 C 10 25, 12 31, 19 30 C 23 29, 25 26, 26 24 Z" fill="#2D6A4F" stroke="#163827" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Central Germination Sprout Leaf (Right) -->
+    <path d="M 26 20 C 29 15, 37 13, 40 16 C 43 19, 41 26, 33 26 C 29 26, 27 22, 26 20 Z" fill="#52B788" stroke="#163827" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Bridge connection dot -->
+    <circle cx="26" cy="44" r="2.5" fill="#163827"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(64, 14)">
+    <!-- English Primary Wordmark -->
+    <text x="0" y="24" font-family="'Outfit', -apple-system, sans-serif" font-size="24" font-weight="700" fill="#0E2A1D" letter-spacing="-0.02em">BeejSetu</text>
+    <!-- Devanagari Script -->
+    <text x="108" y="23" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="600" fill="#A44A29" letter-spacing="0.02em">बीजसेतु</text>
+    <!-- Supporting Tagline -->
+    <text x="1" y="39" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#56675E" letter-spacing="0.08em">INDIGENOUS SEED EXCHANGE &amp; AGROFORESTRY</text>
+  </g>
+</svg>

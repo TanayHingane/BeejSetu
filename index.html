@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SeedBridge | Community Seed Exchange & Tree Plantation Network</title>
-  <meta name="description" content="Donate fruit and vegetable seeds to NGOs and rural farmers, or order free native heirloom seeds for your garden and tree plantation drives.">
-  <meta name="theme-color" content="#14532D">
+  <title>BeejSetu (बीजसेतु) | Indigenous Seed Exchange & Agroforestry Network</title>
+  <meta name="description" content="Donate cleaned fruit and indigenous tree seeds to verified grassroots nurseries across Maharashtra. Organizations like Sahyadri Devrai and BAIF raise them into saplings for afforestation or distribute them directly to smallholder farmers.">
+  <meta name="theme-color" content="#0E2A1D">
 
   <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
@@ -18,22 +18,29 @@
 <body>
 
   <!-- ==========================================================================
+       Ambient Botanical Background Canvas (Golden Seeds at Sunrise)
+       Editorial Landscape Backdrop inspired by Reference Image
+       ========================================================================== -->
+  <div class="site-bg-canvas" aria-hidden="true">
+    <div class="site-bg-layer">
+      <img src="assets/img/golden-seeds-sunrise.png" alt="" class="site-bg-photo" fetchpriority="high">
+    </div>
+    <div class="site-bg-veil"></div>
+  </div>
+
+  <!-- ==========================================================================
        Site Header & Navigation
        ========================================================================== -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="#" class="brand-logo" id="brand-logo-link">
-        <div class="logo-badge">🌱</div>
-        <div>
-          <span>SeedBridge</span>
-          <span class="brand-tagline">बीजबंधु • Community Seed Exchange</span>
-        </div>
+      <a href="#" class="brand-logo" id="brand-logo-link" aria-label="BeejSetu Home">
+        <img src="assets/brand/beejsetu-logo.svg" alt="BeejSetu (बीजसेतु)" width="184" height="42" style="height: 42px; width: auto; max-height: 42px; display: block;">
       </a>
 
       <nav>
         <ul class="nav-links">
           <li><a href="#portal-section" class="nav-link">How It Works</a></li>
-          <li><a href="#catalog-section" class="nav-link">Order Seeds</a></li>
+          <li><a href="#catalog-section" class="nav-link">Seeds Needed</a></li>
           <li><a href="#donate-section" class="nav-link">Donate Seeds</a></li>
           <li><a href="#guide-section" class="nav-link">Seed Saving 101</a></li>
           <li><a href="#ngo-section" class="nav-link">NGO Network</a></li>
@@ -42,19 +49,15 @@
 
       <div class="nav-actions">
         <!-- Activity Tracker Trigger -->
-        <button class="btn btn-secondary" id="btn-activity-trigger" onclick="openActivityDrawer()" title="View your donations & orders">
-          📜 My Activity
-        </button>
-
-        <!-- Cart Drawer Trigger -->
-        <button class="cart-toggle-btn" id="btn-cart-trigger" onclick="openCartDrawer()" aria-label="Open Seed Basket">
-          🧺
-          <span class="cart-badge cart-badge-count" style="display: none;">0</span>
+        <button class="btn btn-secondary" id="btn-activity-trigger" onclick="openActivityDrawer()" title="View your past seed donations & certificates">
+          <img src="assets/icons/award.svg" class="btn-icon" alt="" width="18" height="18">
+          <span>My Donations</span>
         </button>
 
         <!-- Quick Donate CTA -->
         <button class="btn btn-primary" onclick="scrollToSection('donate-section')">
-          + Donate Seeds
+          <img src="assets/icons/seed.svg" class="btn-icon" alt="" width="18" height="18">
+          <span>Donate Seeds</span>
         </button>
       </div>
     </div>
@@ -66,26 +69,28 @@
   <section class="hero-section" id="hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-pill">
-          <span class="pulse"></span>
-          <span>India's People-Powered Seed Bank Network</span>
+        <div class="hero-pilot-tag">
+          <span class="pilot-dot"></span>
+          <span>Pune &amp; Western Ghats Native Seed Pilot</span>
         </div>
 
         <h1 class="hero-title">
           Don't Trash the Seed. <br>
-          <span class="gradient-text">Grow a Future.</span>
+          <span class="hero-accent">Bridge It to the Soil.</span>
         </h1>
 
         <p class="hero-description">
-          Every fruit and vegetable you eat holds the gift of new life. Donate leftover seeds to grassroots NGOs and rural farmers, or order free native heirloom seeds for your home garden and tree plantation drives.
+          Every fruit consumed in your kitchen holds the gift of new canopy life. Clean and donate leftover seeds from mangoes, jamuns, and sitaphal to verified Maharashtra nurseries. Our partner NGOs nurture them into saplings for afforestation or distribute them directly to smallholder farmers.
         </p>
 
         <div class="hero-buttons">
-          <button class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.05rem;" onclick="scrollToSection('donate-section')">
-            🎁 Donate Seeds Today
+          <button class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.02rem;" onclick="scrollToSection('donate-section')">
+            <img src="assets/icons/seed.svg" class="btn-icon" alt="" width="20" height="20">
+            <span>Start Donation Wizard</span>
           </button>
-          <button class="btn btn-secondary" style="padding: 0.9rem 1.8rem; font-size: 1.05rem;" onclick="scrollToSection('catalog-section')">
-            📦 Order Free Seeds
+          <button class="btn btn-secondary" style="padding: 0.9rem 1.8rem; font-size: 1.02rem;" onclick="scrollToSection('catalog-section')">
+            <img src="assets/icons/sprout.svg" class="btn-icon" alt="" width="20" height="20">
+            <span>View Needed Species</span>
           </button>
         </div>
 
@@ -96,47 +101,403 @@
           </div>
           <div class="stat-item">
             <h3 id="stat-trees-count">12,280+</h3>
-            <p>Fruit Trees & Vines Grown</p>
+            <p>Saplings &amp; Vines Nurtured</p>
           </div>
           <div class="stat-item">
             <h3 id="stat-farmers-count">420+</h3>
-            <p>Farmers & Gardeners Aided</p>
+            <p>Growers &amp; Nurseries Aided</p>
           </div>
         </div>
       </div>
 
       <div class="hero-visual-col">
         <div class="hero-visual-card">
-          <img src="assets/img/hero.jpg" alt="Hands nurturing sprouting seeds" width="800" height="450">
-          <div class="hero-floating-badge">
-            <div class="floating-icon">🍈</div>
-            <div class="floating-text">
-              <h4>100% Desi & Non-GMO</h4>
-              <p>Preserving heritage biodiversity with verified partner NGOs</p>
-            </div>
+          <img src="assets/img/hero.jpg" alt="Hands nurturing sprouting seeds in rich soil" width="800" height="450">
+          <div class="hero-caption-strip">
+            <div class="caption-lead">Western Ghats Native Biodiversity</div>
+            <div class="caption-sub">Jamun, Mango, Sitaphal &amp; Heirloom Varieties Preserved with Verified NGOs</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Impact Ribbon -->
-  <div class="impact-ribbon">
-    <div class="container ribbon-flex">
-      <div class="ribbon-item">
-        <span class="icon">🫐</span>
-        <span>Jamun, Mango, Sitaphal & native fruit seeds directly sent to nurseries</span>
-      </div>
-      <div class="ribbon-item">
-        <span class="icon">🚚</span>
-        <span>Free doorstep pickup & courier dispatch across India</span>
-      </div>
-      <div class="ribbon-item">
-        <span class="icon">🏆</span>
-        <span>Earn verifiable Green Seed Champion badges on every donation</span>
+  <!-- ==========================================================================
+       Verified Maharashtra Conservation Network — Editorial Marquee Showcase
+       Inspired by Marque inspiration.png layout
+       ========================================================================== -->
+  <section class="ngo-marquee-section" id="partner-network-showcase" aria-label="Verified Maharashtra Conservation Network">
+    <div class="container">
+      <div class="ngo-marquee-grid">
+        
+        <!-- Left Column: Editorial Headline, Context & Action -->
+        <div class="ngo-marquee-content">
+          <div class="marquee-badge-pill">
+            <span class="badge-dot"></span>
+            <span>Verified Maharashtra Network</span>
+          </div>
+          
+          <h2 class="marquee-editorial-title">
+            Grassroots trust.<br>
+            <span class="marquee-title-accent">Field-proven impact.</span>
+          </h2>
+          
+          <p class="marquee-editorial-desc">
+            Direct citizen seed handoff pathways across Maharashtra's recognized agroforestry missions, indigenous seed banks, and sacred grove guardians.
+          </p>
+          
+          <div class="marquee-cta-wrap">
+            <a href="#ngos" class="btn btn-primary marquee-cta-btn">
+              <span>Explore Partner NGOs</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Dual-Column Vertical Marquee Cards (Desktop) & Infinite Track (Mobile) -->
+        <div class="ngo-marquee-showcase" aria-label="Partner NGO Directory Preview">
+          
+          <!-- Desktop Dual-Column Vertical Scroller -->
+          <div class="marquee-columns-container">
+            
+            <!-- Column 1 (Scrolls Upward) -->
+            <div class="marquee-v-col">
+              <div class="marquee-v-track marquee-col1-track">
+                <!-- Sahyadri Devrai -->
+                <a href="#ngos" class="marquee-partner-card">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/tree.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Sahyadri Devrai</strong>
+                      <span class="marquee-card-devanagari">(सह्याद्री देवराई)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>SATARA &amp; PUNE</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- BAIF Development Research -->
+                <a href="#ngos" class="marquee-partner-card">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/shield-check.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>BAIF Research</strong>
+                      <span class="marquee-card-devanagari">(बायफ)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>PUNE / WARJE</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Kalsubai Parisar Seed Bank -->
+                <a href="#ngos" class="marquee-partner-card">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/seed.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Kalsubai Seed Bank</strong>
+                      <span class="marquee-card-devanagari">(राहीबाई पोपेरे)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>AKOLE SEED BANK</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Duplicate Items for Column 1 for seamless infinite loop -->
+                <a href="#ngos" class="marquee-partner-card" aria-hidden="true">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/tree.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Sahyadri Devrai</strong>
+                      <span class="marquee-card-devanagari">(सह्याद्री देवराई)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>SATARA &amp; PUNE</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#ngos" class="marquee-partner-card" aria-hidden="true">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/shield-check.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>BAIF Research</strong>
+                      <span class="marquee-card-devanagari">(बायफ)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>PUNE / WARJE</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#ngos" class="marquee-partner-card" aria-hidden="true">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/seed.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Kalsubai Seed Bank</strong>
+                      <span class="marquee-card-devanagari">(राहीबाई पोपेरे)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>AKOLE SEED BANK</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 2 (Scrolls Downward / Offset) -->
+            <div class="marquee-v-col">
+              <div class="marquee-v-track marquee-col2-track">
+                <!-- Vanarai -->
+                <a href="#ngos" class="marquee-partner-card">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/tree.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Vanarai</strong>
+                      <span class="marquee-card-devanagari">(वनराई)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>PUNE HQ</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Naam Foundation -->
+                <a href="#ngos" class="marquee-partner-card">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/sprout.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Naam Foundation</strong>
+                      <span class="marquee-card-devanagari">(नाम फाउंडेशन)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>MARATHWADA</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Paryavaran Dakshata Mandal -->
+                <a href="#ngos" class="marquee-partner-card">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/award.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Paryavaran Dakshata</strong>
+                      <span class="marquee-card-devanagari">(निसर्गायन)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>THANE &amp; KALYAN</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Duplicate Items for Column 2 for seamless infinite loop -->
+                <a href="#ngos" class="marquee-partner-card" aria-hidden="true">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/tree.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Vanarai</strong>
+                      <span class="marquee-card-devanagari">(वनराई)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>PUNE HQ</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#ngos" class="marquee-partner-card" aria-hidden="true">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/sprout.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Naam Foundation</strong>
+                      <span class="marquee-card-devanagari">(नाम फाउंडेशन)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>MARATHWADA</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#ngos" class="marquee-partner-card" aria-hidden="true">
+                  <div class="marquee-card-emblem">
+                    <img src="assets/icons/award.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="marquee-card-info">
+                    <div class="marquee-card-title">
+                      <strong>Paryavaran Dakshata</strong>
+                      <span class="marquee-card-devanagari">(निसर्गायन)</span>
+                    </div>
+                    <div class="marquee-card-meta">
+                      <span>MAHARASHTRA</span>
+                      <span class="meta-dot">•</span>
+                      <span>THANE &amp; KALYAN</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Mobile Fallback: Horizontal Infinite Track -->
+          <div class="marquee-mobile-track-wrapper">
+            <div class="marquee-mobile-track">
+              <!-- Item 1 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/tree.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Sahyadri Devrai</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • SATARA</span></div>
+                </div>
+              </a>
+              <!-- Item 2 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/shield-check.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>BAIF Research</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • PUNE</span></div>
+                </div>
+              </a>
+              <!-- Item 3 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/seed.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Kalsubai Seed Bank</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • AKOLE</span></div>
+                </div>
+              </a>
+              <!-- Item 4 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/tree.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Vanarai</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • PUNE</span></div>
+                </div>
+              </a>
+              <!-- Item 5 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/sprout.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Naam Foundation</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • PUNE</span></div>
+                </div>
+              </a>
+              <!-- Item 6 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/award.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Paryavaran Dakshata</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • THANE</span></div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Mobile Duplicate Track -->
+            <div class="marquee-mobile-track" aria-hidden="true">
+              <!-- Item 1 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/tree.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Sahyadri Devrai</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • SATARA</span></div>
+                </div>
+              </a>
+              <!-- Item 2 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/shield-check.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>BAIF Research</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • PUNE</span></div>
+                </div>
+              </a>
+              <!-- Item 3 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/seed.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Kalsubai Seed Bank</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • AKOLE</span></div>
+                </div>
+              </a>
+              <!-- Item 4 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/tree.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Vanarai</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • PUNE</span></div>
+                </div>
+              </a>
+              <!-- Item 5 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/sprout.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Naam Foundation</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • PUNE</span></div>
+                </div>
+              </a>
+              <!-- Item 6 -->
+              <a href="#ngos" class="marquee-partner-card">
+                <div class="marquee-card-emblem"><img src="assets/icons/award.svg" alt="" width="20" height="20"></div>
+                <div class="marquee-card-info">
+                  <div class="marquee-card-title"><strong>Paryavaran Dakshata</strong></div>
+                  <div class="marquee-card-meta"><span>MAHARASHTRA • THANE</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
   <main>
     <!-- ==========================================================================
@@ -145,9 +506,9 @@
     <section class="section section-alt" id="portal-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">How SeedBridge Works</span>
-          <h2 class="section-title">Two Paths, One Greener Tomorrow</h2>
-          <p class="section-subtitle">Whether you're saving seeds from your kitchen kitchen or planting an orchard, SeedBridge connects you to soil.</p>
+          <span class="section-tag">How BeejSetu Works</span>
+          <h2 class="section-title">Two Paths, One Living Canopy</h2>
+          <p class="section-subtitle">Whether you're saving seeds from your kitchen counter or planting an orchard, BeejSetu connects you directly to fertile soil.</p>
         </div>
 
         <div class="dual-portal-grid">
@@ -155,19 +516,21 @@
           <div class="portal-card card-donate">
             <div>
               <div class="portal-header">
-                <div class="portal-icon">🍎</div>
+                <div class="portal-icon">
+                  <img src="assets/icons/seed.svg" width="30" height="30" alt="">
+                </div>
                 <div>
-                  <span class="portal-badge">For Donors & Citizens</span>
+                  <span class="portal-badge">For Donors &amp; Urban Citizens</span>
                   <h3 class="portal-title">I Want to Donate Seeds</h3>
                 </div>
               </div>
               <p class="portal-desc">
-                Saved seeds from mangoes, jamuns, papayas, or heirloom veggies? Don't throw them into the wet-waste bin. Clean and dry them; we collect and send them to partner NGOs for large-scale afforestation.
+                Saved seeds from mangoes, jamuns, sitaphal, or organic vegetables? Don't discard them into landfills. Wash and dry them; we collect and route them to recognized agroforestry missions for large-scale afforestation.
               </p>
               <ul class="portal-checklist">
-                <li><span class="check">✓</span> Free doorstep pickup or drop-off at nearest verified NGO</li>
-                <li><span class="check">✓</span> Supported by WePlant, Navdanya, Annadana & more</li>
-                <li><span class="check">✓</span> Instant digital Green Seed Champion Certificate</li>
+                <li><img src="assets/icons/check.svg" class="check-icon" alt="" width="16" height="16"> Free doorstep pickup or drop-off at nearest verified partner NGO</li>
+                <li><img src="assets/icons/check.svg" class="check-icon" alt="" width="16" height="16"> Supported by Sahyadri Devrai, BAIF Pune, Lokpanchayat &amp; Vanarai</li>
+                <li><img src="assets/icons/check.svg" class="check-icon" alt="" width="16" height="16"> Dynamic digital Green Seed Champion Certificate of Stewardship</li>
               </ul>
             </div>
             <button class="btn btn-primary" onclick="scrollToSection('donate-section')">
@@ -175,27 +538,29 @@
             </button>
           </div>
 
-          <!-- Pathway 2: Order Seeds -->
+          <!-- Pathway 2: Where Seeds Go (For Forests & Farmers) -->
           <div class="portal-card card-order">
             <div>
               <div class="portal-header">
-                <div class="portal-icon">🪴</div>
+                <div class="portal-icon">
+                  <img src="assets/icons/tree.svg" width="30" height="30" alt="">
+                </div>
                 <div>
-                  <span class="portal-badge">For Gardeners & Planters</span>
-                  <h3 class="portal-title">I Want to Order Seeds</h3>
+                  <span class="portal-badge">For Forests &amp; Farmers</span>
+                  <h3 class="portal-title">Where Do Donated Seeds Go?</h3>
                 </div>
               </div>
               <p class="portal-desc">
-                Looking for indigenous fruit tree seeds or heirloom non-hybrid vegetable seeds for your terrace pots, school plantation, or community orchard? Request open-pollinated seeds directly to your door.
+                We do not sell seeds. Every seed you donate is handed directly to verified Maharashtra NGOs (like Sahyadri Devrai and BAIF). Nurseries raise them into saplings for afforestation, while hardy seeds are donated directly to smallholder farmers.
               </p>
               <ul class="portal-checklist">
-                <li><span class="check">✓</span> Non-hybrid, open-pollinated traditional varieties</li>
-                <li><span class="check">✓</span> High germination rate tested seeds with planting guide</li>
-                <li><span class="check">✓</span> 100% community-sponsored free seed packets</li>
+                <li><img src="assets/icons/check.svg" class="check-icon" alt="" width="16" height="16"> Nurtured into saplings in community Vruksha Banks for Western Ghats revival</li>
+                <li><img src="assets/icons/check.svg" class="check-icon" alt="" width="16" height="16"> Distributed to marginal farmers in drought-prone belts for agroforestry</li>
+                <li><img src="assets/icons/check.svg" class="check-icon" alt="" width="16" height="16"> 100% non-commercial citizen-to-soil ecological stewardship</li>
               </ul>
             </div>
             <button class="btn btn-secondary" onclick="scrollToSection('catalog-section')">
-              Explore Available Seeds →
+              See Which Seeds Are Urgently Needed →
             </button>
           </div>
         </div>
@@ -203,20 +568,22 @@
     </section>
 
     <!-- ==========================================================================
-         Catalog Section (Order / Request Seeds)
+         Catalog Section (Species Urgently Needed)
          ========================================================================== -->
     <section class="section" id="catalog-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Seed Vault</span>
-          <h2 class="section-title">Order Native & Heirloom Seeds</h2>
-          <p class="section-subtitle">Add verified seeds to your seed box. Free for home gardeners, schools, and reforestation volunteers.</p>
+          <span class="section-tag">Species Registry</span>
+          <h2 class="section-title">Seeds Urgently Needed for Maharashtra Forests &amp; Farmers</h2>
+          <p class="section-subtitle">Browse the native fruit, medicinal, and heirloom species that our partner NGOs are actively collecting to nurture into saplings or donate to smallholder farmers.</p>
         </div>
 
         <!-- Filter & Search Toolbar -->
         <div class="catalog-toolbar">
           <div class="search-box">
-            <span class="search-icon">🔍</span>
+            <span class="search-icon">
+              <img src="assets/icons/search.svg" class="search-svg" width="18" height="18" alt="">
+            </span>
             <input type="text" id="catalog-search-input" placeholder="Search by seed name (e.g., Jamun, Tomato, Moringa)..." aria-label="Search seeds">
           </div>
 
@@ -224,7 +591,7 @@
             <button class="filter-btn active" data-filter="all">All Varieties</button>
             <button class="filter-btn" data-filter="fruit">Fruit Trees</button>
             <button class="filter-btn" data-filter="vegetable">Heritage Vegetables</button>
-            <button class="filter-btn" data-filter="medicinal">Medicinal & Herbs</button>
+            <button class="filter-btn" data-filter="medicinal">Medicinal &amp; Herbs</button>
           </div>
         </div>
 
@@ -281,8 +648,8 @@
                 <select id="donationSeedCategory" class="form-select" required>
                   <option value="Fruit Tree Seeds">Native Fruit Tree Seeds (Mango, Jamun, Sitaphal, Guava, Jackfruit)</option>
                   <option value="Heirloom Vegetable Seeds">Heritage Vegetable Seeds (Desi Tomato, Okra, Lauki, Moringa)</option>
-                  <option value="Medicinal & Forest Seeds">Medicinal & Forest Seeds (Neem, Amla, Tulsi, Ashwagandha)</option>
-                  <option value="Flower & Pollinator Seeds">Pollinator & Flower Seeds (Marigold, Sunflower, Native Wildflowers)</option>
+                  <option value="Medicinal &amp; Forest Seeds">Medicinal &amp; Forest Seeds (Neem, Amla, Tulsi, Ashwagandha)</option>
+                  <option value="Flower &amp; Pollinator Seeds">Pollinator &amp; Flower Seeds (Marigold, Sunflower, Native Wildflowers)</option>
                 </select>
               </div>
 
@@ -298,13 +665,13 @@
               </div>
 
               <div class="form-group">
-                <label>Origin & Collection Notes (Optional)</label>
-                <input type="text" id="donationOrigin" class="form-input" placeholder="e.g. Collected from organic farm in Ratnagiri, harvested last week">
+                <label>Origin &amp; Collection Notes (Optional)</label>
+                <input type="text" id="donationOrigin" class="form-input" placeholder="e.g. Collected from home kitchen fruit in Pune, dried last week">
               </div>
 
               <div class="wizard-footer-buttons" style="justify-content: flex-end;">
                 <button type="button" class="btn btn-primary" onclick="if(validateWizardStep1()) goToWizardStep(2)">
-                  Next: Preparation Check →
+                  <span>Next: Preparation Check →</span>
                 </button>
               </div>
             </div>
@@ -322,7 +689,7 @@
                 <label class="checkbox-label">
                   <input type="checkbox" id="check-clean" required>
                   <div>
-                    <strong>Pulp-free & Cleaned:</strong> The seeds have been washed thoroughly with clean water, free of sweet fruit pulp or sugars.
+                    <strong>Pulp-free &amp; Cleaned:</strong> The seeds have been washed thoroughly with clean water, free of sweet fruit pulp or sugars.
                   </div>
                 </label>
                 <label class="checkbox-label">
@@ -351,24 +718,24 @@
                 Step 3: How would you like to contribute?
               </h3>
               <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-                Select your preferred handover method. We provide free doorstep courier pickups for donations over 30 seeds.
+                Select your preferred handover method. We provide free volunteer courier pickups for donations over 30 seeds.
               </p>
 
               <input type="hidden" id="donationDeliveryMode" value="Doorstep Volunteer / Courier Pickup">
 
               <div class="radio-card-grid">
                 <div class="radio-card selected" onclick="selectRadioCard(this, 'donationDeliveryMode', 'Doorstep Volunteer / Courier Pickup')">
-                  <span class="icon">🛵</span>
+                  <img src="assets/icons/truck.svg" class="radio-card-icon" width="28" height="28" alt="">
                   <h4>Doorstep Pickup</h4>
-                  <p>Our volunteer courier picks up the package from your home or office address.</p>
+                  <p>Our volunteer courier collects the packet directly from your Pune address.</p>
                 </div>
                 <div class="radio-card" onclick="selectRadioCard(this, 'donationDeliveryMode', 'Drop-off at Nearest Partner NGO')">
-                  <span class="icon">🏛️</span>
+                  <img src="assets/icons/map-pin.svg" class="radio-card-icon" width="28" height="28" alt="">
                   <h4>Drop at Partner NGO</h4>
-                  <p>Hand over directly to WePlant, Navdanya, Annadana or regional collection centers.</p>
+                  <p>Hand over directly to Sahyadri Devrai, BAIF, Lokpanchayat, Vanarai or regional Maharashtra collection centers.</p>
                 </div>
                 <div class="radio-card" onclick="selectRadioCard(this, 'donationDeliveryMode', 'Direct SpeedPost / Courier')">
-                  <span class="icon">📬</span>
+                  <img src="assets/icons/package.svg" class="radio-card-icon" width="28" height="28" alt="">
                   <h4>Self Courier / SpeedPost</h4>
                   <p>Mail the package using our prepaid digital shipping label.</p>
                 </div>
@@ -383,10 +750,10 @@
             <!-- STEP 4: Donor Details & Certificate -->
             <div class="wizard-form-step" data-step="4">
               <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--green-900); margin-bottom: 0.5rem;">
-                Step 4: Donor Information & Green Badge
+                Step 4: Donor Information &amp; Green Badge
               </h3>
               <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-                We'll issue your personalized Green Seed Champion Certificate and send status tracking.
+                We'll issue your personalized Green Seed Champion Certificate and send status updates.
               </p>
 
               <div class="form-row">
@@ -402,7 +769,7 @@
 
               <div class="form-row">
                 <div class="form-group">
-                  <label>City & State <span class="required">*</span></label>
+                  <label>City &amp; State <span class="required">*</span></label>
                   <input type="text" id="donorCity" class="form-input" placeholder="e.g. Pune, Maharashtra" required>
                 </div>
                 <div class="form-group">
@@ -413,13 +780,14 @@
 
               <div class="form-group">
                 <label>Message / Eco Pledge (Optional)</label>
-                <textarea id="donorMessage" class="form-textarea" rows="2" placeholder="Share why you're saving seeds or send a cheer to the farmer planting them!"></textarea>
+                <textarea id="donorMessage" class="form-textarea" rows="2" placeholder="Share why you're saving seeds or send encouragement to the farmer planting them!"></textarea>
               </div>
 
               <div class="wizard-footer-buttons">
                 <button type="button" class="btn btn-secondary" onclick="goToWizardStep(3)">← Back</button>
                 <button type="submit" class="btn btn-primary" style="padding: 0.85rem 1.75rem;">
-                  🌱 Submit Donation & Get Certificate
+                  <img src="assets/icons/seed.svg" class="btn-icon" alt="" width="18" height="18">
+                  <span>Submit Donation &amp; Get Certificate</span>
                 </button>
               </div>
             </div>
@@ -437,34 +805,42 @@
         <div class="section-header">
           <span class="section-tag">Seed Saving 101</span>
           <h2 class="section-title">How to Prepare Seeds from Your Kitchen</h2>
-          <p class="section-subtitle">Don't let seeds rot! Follow this foolproof 4-step preparation protocol used by botanical seed banks.</p>
+          <p class="section-subtitle">Don't let viable seeds rot. Follow this foolproof 4-step preparation protocol used by botanical seed banks.</p>
         </div>
 
         <div class="guide-grid">
           <div class="guide-step-card">
             <span class="step-watermark">01</span>
-            <div class="guide-icon">🍎</div>
+            <div class="guide-icon">
+              <img src="assets/icons/seed.svg" width="24" height="24" alt="">
+            </div>
             <h3>Source Native Produce</h3>
             <p>Pick fully ripened desi, organic, or local fruits and veggies. Avoid imported hybrid grocery produce whose seeds are often sterile or weak.</p>
           </div>
 
           <div class="guide-step-card">
             <span class="step-watermark">02</span>
-            <div class="guide-icon">💧</div>
-            <h3>Wash & Strip Pulp</h3>
+            <div class="guide-icon">
+              <img src="assets/icons/droplet.svg" width="24" height="24" alt="">
+            </div>
+            <h3>Wash &amp; Strip Pulp</h3>
             <p>Scrub away fruit sugars under cold water. For tomatoes and melons, soak in a jar of water for 48 hours to dissolve the sprouting-inhibiting gel.</p>
           </div>
 
           <div class="guide-step-card">
             <span class="step-watermark">03</span>
-            <div class="guide-icon">☀️</div>
+            <div class="guide-icon">
+              <img src="assets/icons/sun.svg" width="24" height="24" alt="">
+            </div>
             <h3>Sun Dry for 48 Hours</h3>
             <p>Spread across cotton cloths or wooden boards. Sun-dry until moisture drops below 8%. Never oven-bake or microwave seeds!</p>
           </div>
 
           <div class="guide-step-card">
             <span class="step-watermark">04</span>
-            <div class="guide-icon">✉️</div>
+            <div class="guide-icon">
+              <img src="assets/icons/paper-bag.svg" width="24" height="24" alt="">
+            </div>
             <h3>Store in Paper Bags</h3>
             <p>Place seeds in breathable brown paper envelopes with a pinch of dry wood ash or neem powder to deter pests and moisture.</p>
           </div>
@@ -473,7 +849,10 @@
         <!-- Interactive Germination Calculator -->
         <div class="calc-card">
           <div class="calc-inputs">
-            <h4>🧪 Germination Viability Test Calculator</h4>
+            <h4>
+              <img src="assets/icons/flask.svg" class="btn-icon" width="22" height="22" alt="">
+              <span>Germination Viability Test Calculator</span>
+            </h4>
             <p>Testing your saved seeds before donating or planting? Use the wet paper towel method with 10 seeds and check how many sprout in 5–7 days.</p>
             
             <div class="form-row">
@@ -490,7 +869,7 @@
 
           <div class="calc-result-box">
             <div class="calc-rate" id="calc-rate-result">90%</div>
-            <div class="calc-verdict" id="calc-verdict-result">🌟 Excellent Viability!</div>
+            <div class="calc-verdict" id="calc-verdict-result">Excellent Viability</div>
             <div class="calc-advice" id="calc-advice-result">Prime quality seeds. Perfect for donating to community nurseries or direct planting.</div>
           </div>
         </div>
@@ -505,7 +884,7 @@
         <div class="section-header">
           <span class="section-tag">Ground Realities</span>
           <h2 class="section-title">Verified NGO Partner Directory</h2>
-          <p class="section-subtitle">Seeds donated through SeedBridge are routed directly to these recognized non-profit seed banks and rural tree planting missions across India.</p>
+          <p class="section-subtitle">Seeds donated through BeejSetu are routed directly to these recognized non-profit seed banks and rural tree planting missions across Maharashtra and the Western Ghats.</p>
         </div>
 
         <div class="ngo-grid" id="ngo-cards-grid">
@@ -518,43 +897,16 @@
   <!-- ==========================================================================
        Cart / Seed Box Slide-Over Drawer
        ========================================================================== -->
-  <div class="drawer-overlay" id="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
-  <aside class="slide-drawer" id="cart-slide-drawer">
-    <div class="drawer-header">
-      <h3>🧺 Your Seed Box (<span class="cart-badge-count">0</span>)</h3>
-      <button class="drawer-close-btn" onclick="closeCartDrawer()" aria-label="Close seed box">✕</button>
-    </div>
-
-    <div class="drawer-body" id="cart-drawer-items">
-      <!-- Injected by JavaScript -->
-    </div>
-
-    <div class="drawer-footer" id="cart-drawer-footer">
-      <div class="cart-summary-row">
-        <span style="color: var(--text-muted);">Seed Cost:</span>
-        <strong style="color: var(--green-600);">100% Free / Community</strong>
-      </div>
-      <div class="cart-summary-row">
-        <span style="color: var(--text-muted);">Packaging & Postal Fee:</span>
-        <strong style="color: var(--green-600);">Sponsored by Partner NGOs</strong>
-      </div>
-      <div class="cart-summary-row total">
-        <span>Total Packets:</span>
-        <span id="cart-total-packets">0 Packets</span>
-      </div>
-      <button class="btn btn-primary" style="width: 100%;" onclick="openOrderCheckoutModal()">
-        Proceed to Order Seeds →
-      </button>
-    </div>
-  </aside>
-
   <!-- ==========================================================================
-       Activity Drawer (My Donations & Orders)
+       Activity Drawer (My Seed Donations & Impact)
        ========================================================================== -->
   <div class="drawer-overlay" id="activity-drawer-overlay" onclick="closeActivityDrawer()"></div>
   <aside class="slide-drawer" id="activity-slide-drawer">
     <div class="drawer-header">
-      <h3>📜 My Seed Activity</h3>
+      <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+        <img src="assets/icons/award.svg" class="btn-icon" width="20" height="20" alt="">
+        <span>My Seed Donations &amp; Impact</span>
+      </h3>
       <button class="drawer-close-btn" onclick="closeActivityDrawer()" aria-label="Close activity tracker">✕</button>
     </div>
 
@@ -564,115 +916,30 @@
   </aside>
 
   <!-- ==========================================================================
-       Order Checkout Modal
-       ========================================================================== -->
-  <div class="modal-overlay" id="order-checkout-modal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3>📦 Confirm Seed Delivery Details</h3>
-        <button class="drawer-close-btn" onclick="closeOrderCheckoutModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-          These seeds are distributed freely through community donations. Please plant them responsibly!
-        </p>
-
-        <div style="background: var(--bg-sage); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-green); margin-bottom: 1.5rem;" id="order-modal-summary">
-          <!-- Summary items -->
-        </div>
-
-        <form id="order-checkout-form" onsubmit="submitOrderForm(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Full Name <span class="required">*</span></label>
-              <input type="text" name="orderName" class="form-input" placeholder="e.g. Tanay Hingane" required>
-            </div>
-            <div class="form-group">
-              <label>Phone Number <span class="required">*</span></label>
-              <input type="tel" name="orderPhone" class="form-input" placeholder="+91 98765 43210" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" name="orderEmail" class="form-input" placeholder="tanay@example.com">
-          </div>
-
-          <div class="form-group">
-            <label>Complete Delivery Address (Doorstep) <span class="required">*</span></label>
-            <input type="text" name="orderAddress" class="form-input" placeholder="House/Flat No., Street, City, State" required>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Postal PIN Code <span class="required">*</span></label>
-              <input type="text" name="orderPincode" class="form-input" placeholder="e.g. 411001" maxlength="6" required>
-            </div>
-            <div class="form-group">
-              <label>Planting Purpose <span class="required">*</span></label>
-              <select name="orderPurpose" class="form-select" required>
-                <option value="Home Kitchen / Terrace Garden">Home Kitchen / Terrace Garden</option>
-                <option value="School / College Plantation Drive">School / College Plantation Drive</option>
-                <option value="Farmer / Rural Agroforestry">Farmer / Rural Agroforestry</option>
-                <option value="Community Park / Public Miyawaki">Community Park / Public Miyawaki</option>
-              </select>
-            </div>
-          </div>
-
-          <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
-            <button type="button" class="btn btn-secondary" onclick="closeOrderCheckoutModal()">Cancel</button>
-            <button type="submit" class="btn btn-primary">Confirm & Place Order</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       Order Success Modal
-       ========================================================================== -->
-  <div class="modal-overlay" id="order-success-modal">
-    <div class="modal-card" style="text-align: center;">
-      <div class="modal-body" style="padding: 2.5rem 2rem;">
-        <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">📦</div>
-        <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--green-900); margin-bottom: 0.5rem;">
-          Seed Request Confirmed!
-        </h3>
-        <p style="font-size: 0.95rem; color: var(--text-secondary);">
-          Your seeds have been allocated from the nearest community vault and are being packed in eco-friendly paper pouches.
-        </p>
-
-        <div id="order-success-details">
-          <!-- Injected dynamically -->
-        </div>
-
-        <button class="btn btn-primary" onclick="closeOrderSuccessModal(); openActivityDrawer();" style="width: 100%;">
-          View in My Activity
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
        Certificate Modal (Green Seed Champion)
        ========================================================================== -->
   <div class="modal-overlay" id="certificate-modal">
     <div class="modal-card" style="max-width: 650px;">
       <div class="modal-header">
-        <h3>🏆 Green Seed Champion Certificate</h3>
+        <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+          <img src="assets/icons/award.svg" class="btn-icon" width="20" height="20" alt="">
+          <span>Green Seed Champion Certificate</span>
+        </h3>
         <button class="drawer-close-btn" onclick="closeCertificateModal()">✕</button>
       </div>
       <div class="modal-body">
         <div class="certificate-frame" id="printable-certificate">
-          <div class="cert-emblem">🌱</div>
+          <div class="cert-emblem">
+            <img src="assets/icons/award.svg" width="48" height="48" alt="Stewardship Seal">
+          </div>
           <div class="cert-title">Certificate of Earth Stewardship</div>
-          <div class="cert-subtitle">Presented by SeedBridge & Partner NGO Network</div>
+          <div class="cert-subtitle">Presented by BeejSetu (बीजसेतु) &amp; Partner NGO Network</div>
           
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">This honor is proudly awarded to</p>
           <div class="cert-donor-name" id="cert-donor-display">Tanay Hingane</div>
           
           <p class="cert-desc" id="cert-details-display">
-            For dedicated effort in saving and donating viable seeds to the national afforestation and heritage crop conservation mission.
+            For dedicated effort in saving and donating viable seeds to the Western Ghats afforestation and heritage crop conservation mission.
           </p>
 
           <div class="cert-meta-row">
@@ -682,7 +949,7 @@
         </div>
 
         <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
-          <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+          <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
           <button class="btn btn-primary" onclick="closeCertificateModal(); openActivityDrawer();">Done</button>
         </div>
       </div>
@@ -698,19 +965,19 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <h3>SeedBridge 🌱</h3>
+        <img src="assets/brand/beejsetu-logo.svg" alt="BeejSetu Logo" height="38" style="filter: brightness(0) invert(1); margin-bottom: 1rem;">
         <p>
-          A community initiative uniting urban seed savers, farmers, and certified afforestation NGOs. Together, we ensure no viable seed ends up in landfills.
+          A community agroforestry network uniting urban seed savers, organic farmers, and certified afforestation NGOs across Pune and the Western Ghats. Together, we ensure no viable seed ends up in landfills.
         </p>
         <div style="font-size: 0.82rem; color: #94A3B8;">
-          Empowering agro-biodiversity and food security across India.
+          Conserving native agro-biodiversity and ecological canopy cover.
         </div>
       </div>
 
       <div class="footer-links-col">
         <h4>Explore</h4>
         <ul class="footer-links-list">
-          <li><a href="#catalog-section">Seed Catalog</a></li>
+          <li><a href="#catalog-section">Seeds Needed</a></li>
           <li><a href="#donate-section">Donate Seeds</a></li>
           <li><a href="#guide-section">Seed Saving Guide</a></li>
           <li><a href="#ngo-section">Partner NGOs</a></li>
@@ -720,10 +987,10 @@
       <div class="footer-links-col">
         <h4>NGO Partners</h4>
         <ul class="footer-links-list">
-          <li><a href="https://weplant.in" target="_blank" rel="noopener">WePlant India</a></li>
-          <li><a href="https://navdanya.org" target="_blank" rel="noopener">Navdanya Seed Bank</a></li>
-          <li><a href="https://annadana-india.org" target="_blank" rel="noopener">Annadana Network</a></li>
-          <li><a href="https://givemetrees.org" target="_blank" rel="noopener">Give Me Trees Trust</a></li>
+          <li><a href="https://sahyadridevrai.org" target="_blank" rel="noopener">Sahyadri Devrai (Satara/Pune)</a></li>
+          <li><a href="https://baif.org.in" target="_blank" rel="noopener">BAIF Development Research (Pune)</a></li>
+          <li><a href="https://lokpanchayat.org" target="_blank" rel="noopener">Lokpanchayat / Rahibai Popere Seed Bank</a></li>
+          <li><a href="https://vanarai.org" target="_blank" rel="noopener">Vanarai Foundation (Pune)</a></li>
         </ul>
       </div>
 
@@ -740,8 +1007,8 @@
     </div>
 
     <div class="container footer-bottom">
-      <div>© 2026 SeedBridge (बीजबंधु). Open Community Heritage Seed Initiative.</div>
-      <div>Designed with 💚 for a Greener India.</div>
+      <div>© 2026 BeejSetu (बीजसेतु). Open Community Heritage Seed Initiative.</div>
+      <div>Piloted with pride across Pune &amp; the Western Ghats.</div>
     </div>
   </footer>
 

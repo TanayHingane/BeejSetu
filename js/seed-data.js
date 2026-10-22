@@ -1,5 +1,5 @@
 /**
- * SeedBridge - Comprehensive Seed Database & Partner NGO Directory
+ * BeejSetu (बीजसेतु) - Comprehensive Seed Database & Partner NGO Directory
  */
 
 const SEED_DATABASE = [
@@ -22,8 +22,8 @@ const SEED_DATABASE = [
     stockPackets: 145,
     description: "Deep purple medicinal fruit tree. Immensely beneficial for diabetes management, pollinators, and urban shade cover.",
     plantingTips: "Plant direct in deep pot or open ground. Keep soil moist until seedling emerges.",
-    acceptedBy: ["WePlant India", "Give Me Trees Trust", "SankalpTaru Foundation"],
-    icon: "🫐"
+    acceptedBy: ["Sahyadri Devrai", "BAIF Pune", "Vanarai"],
+    icon: "assets/icons/tree.svg"
   },
   {
     id: "sb-ft-02",
@@ -44,8 +44,8 @@ const SEED_DATABASE = [
     stockPackets: 210,
     description: "Native un-grafted desi mango seeds produce vigorous, drought-tolerant, long-lived canopy trees providing rich shade and sweet fruit.",
     plantingTips: "Gently extract the inner seed kernel from the fibrous husk for 50% faster germination.",
-    acceptedBy: ["WePlant India", "SankalpTaru Foundation"],
-    icon: "🥭"
+    acceptedBy: ["Sahyadri Devrai", "BAIF Pune", "Vanarai"],
+    icon: "assets/icons/tree.svg"
   },
   {
     id: "sb-ft-03",
@@ -66,8 +66,8 @@ const SEED_DATABASE = [
     stockPackets: 180,
     description: "Extremely hardy native fruit shrub-tree. Thrives in dry stony soil where other trees fail; requires minimal water.",
     plantingTips: "Soak black seeds in lukewarm water for 24 hours prior to sowing in nursery bags.",
-    acceptedBy: ["Sahaja Samrudha", "WePlant India"],
-    icon: "🍈"
+    acceptedBy: ["Sahyadri Devrai", "Naam Foundation", "Paryavaran Dakshata Mandal"],
+    icon: "assets/icons/tree.svg"
   },
   {
     id: "sb-ft-04",
@@ -88,8 +88,8 @@ const SEED_DATABASE = [
     stockPackets: 95,
     description: "High in Vitamin C and dietary fiber. Fast growing and flowers prolifically attracting native honeybees.",
     plantingTips: "Sow seeds 0.5 cm deep in warm seed starter mix. Protect small seedlings from winter frost.",
-    acceptedBy: ["Give Me Trees Trust", "Navdanya"],
-    icon: "🍏"
+    acceptedBy: ["Naam Foundation", "BAIF Pune", "Paryavaran Dakshata Mandal"],
+    icon: "assets/icons/tree.svg"
   },
   {
     id: "sb-ft-05",
@@ -110,8 +110,8 @@ const SEED_DATABASE = [
     stockPackets: 70,
     description: "A sacred Ayurvedic tree loaded with antioxidants. Highly resilient and suitable for farm border planting.",
     plantingTips: "Crack the outer hard nut gently to release the small inner dark seeds.",
-    acceptedBy: ["Annadana", "Navdanya"],
-    icon: "🫒"
+    acceptedBy: ["BAIF Pune", "Vanarai", "Sahyadri Devrai"],
+    icon: "assets/icons/tree.svg"
   },
   {
     id: "sb-veg-01",
@@ -132,8 +132,8 @@ const SEED_DATABASE = [
     stockPackets: 320,
     description: "Traditional tangy desi variety with thin skin and intense aroma. Not modified or hybrid; seeds can be saved year after year.",
     plantingTips: "Transplant 20 days after seedling germination into pots of at least 12 inch depth.",
-    acceptedBy: ["Annadana", "Navdanya", "Sahaja Samrudha"],
-    icon: "🍅"
+    acceptedBy: ["Kalsubai Parisar (Rahibai Popere)", "BAIF Pune", "Lokpanchayat"],
+    icon: "assets/icons/sprout.svg"
   },
   {
     id: "sb-veg-02",
@@ -154,8 +154,8 @@ const SEED_DATABASE = [
     stockPackets: 240,
     description: "Tender, slender okra pods with high resistance to Yellow Vein Mosaic Virus. Perfect for terrace gardens.",
     plantingTips: "Direct sow seeds 1 inch deep with 12 inches spacing between plants.",
-    acceptedBy: ["Sahaja Samrudha", "Annadana"],
-    icon: "🥬"
+    acceptedBy: ["Kalsubai Parisar (Rahibai Popere)", "Naam Foundation"],
+    icon: "assets/icons/sprout.svg"
   },
   {
     id: "sb-veg-03",
@@ -176,8 +176,8 @@ const SEED_DATABASE = [
     stockPackets: 190,
     description: "The miracle tree. Leaves are nutrient-dense superfood, pods are delicious, and seeds purify water.",
     plantingTips: "Sow winged black seeds 1 inch deep directly in sunny backyard or large 50-liter grow bag.",
-    acceptedBy: ["WePlant India", "Annadana", "Give Me Trees Trust"],
-    icon: "🌿"
+    acceptedBy: ["BAIF Pune", "Vanarai", "Naam Foundation"],
+    icon: "assets/icons/tree.svg"
   },
   {
     id: "sb-veg-04",
@@ -198,8 +198,8 @@ const SEED_DATABASE = [
     stockPackets: 160,
     description: "Vigorous vine yielding sweet tender gourds. Excellent cooling vegetable for Indian summers.",
     plantingTips: "Provide a strong bamboo trellis or rooftop pergola for the vines to climb freely.",
-    acceptedBy: ["Navdanya", "Sahaja Samrudha"],
-    icon: "🥒"
+    acceptedBy: ["Kalsubai Parisar (Rahibai Popere)", "BAIF Pune"],
+    icon: "assets/icons/sprout.svg"
   },
   {
     id: "sb-veg-05",
@@ -220,8 +220,8 @@ const SEED_DATABASE = [
     stockPackets: 280,
     description: "Fastest-growing indigenous green leafy vegetable, rich in iron, calcium, and dietary antioxidants.",
     plantingTips: "Scatter tiny seeds lightly over soil surface and dust with fine compost.",
-    acceptedBy: ["Annadana", "Navdanya"],
-    icon: "🌱"
+    acceptedBy: ["Kalsubai Parisar (Rahibai Popere)", "Paryavaran Dakshata Mandal"],
+    icon: "assets/icons/sprout.svg"
   },
   {
     id: "sb-med-01",
@@ -242,8 +242,8 @@ const SEED_DATABASE = [
     stockPackets: 350,
     description: "Dark purple-veined aromatic leaves. Known for immune-boosting qualities and mosquito-repelling foliage.",
     plantingTips: "Do not bury seeds too deep; light is required for optimal germination.",
-    acceptedBy: ["Navdanya", "Annadana"],
-    icon: "🪴"
+    acceptedBy: ["Paryavaran Dakshata Mandal", "Kalsubai Parisar (Rahibai Popere)"],
+    icon: "assets/icons/pot.svg"
   },
   {
     id: "sb-med-02",
@@ -264,112 +264,112 @@ const SEED_DATABASE = [
     stockPackets: 85,
     description: "Ancient medicinal adaptogen. Cultivated for its restorative roots and pollinator-friendly orange berries.",
     plantingTips: "Ensure excellent drainage. Water only when top 2 inches of soil feel completely dry.",
-    acceptedBy: ["Sahaja Samrudha", "Navdanya"],
-    icon: "🍂"
+    acceptedBy: ["Paryavaran Dakshata Mandal", "BAIF Pune"],
+    icon: "assets/icons/pot.svg"
   }
 ];
 
 const NGO_PARTNERS = [
   {
-    id: "ngo-weplant",
-    name: "WePlant India",
-    tagline: "Fruit Tree Revolution for Food & Climate Security",
-    primaryRole: "Receives fruit seeds from citizens to grow community orchards",
-    address: "B1/603 A, 1st Floor, Janakpuri, New Delhi – 110058, India",
-    city: "New Delhi",
-    state: "Delhi",
-    phone: "+91-9868993746",
-    altPhone: "+91-8800020520",
-    email: "info@weplant.in",
-    website: "https://weplant.in",
-    acceptedSeeds: ["Mango", "Jamun", "Custard Apple", "Jackfruit", "Tamarind", "Guava"],
-    donationsReceived: 125000,
-    rating: 4.9,
-    verified: true
-  },
-  {
-    id: "ngo-navdanya",
-    name: "Navdanya Biodiversity Seed Bank",
-    tagline: "Conserving India's Indigenous Agricultural Heritage",
-    primaryRole: "Heirloom seed conservation, seed exchange & training",
-    address: "A-60, Hauz Khas, New Delhi – 110016 / Farm: Ramgarh, Dehradun, Uttarakhand",
-    city: "New Delhi & Dehradun",
-    state: "Delhi / Uttarakhand",
-    phone: "+91-11-26968077",
-    altPhone: "+91-135-2693025",
-    email: "navdanya@gmail.com",
-    website: "https://navdanya.org",
-    acceptedSeeds: ["Heirloom Tomatoes", "Indigenous Okra", "Gourds", "Traditional Millets & Pulses"],
-    donationsReceived: 84000,
+    id: "ngo-sahyadri",
+    name: "Sahyadri Devrai (सह्याद्री देवराई)",
+    tagline: "Sacred Groves (Devrai) Revival & Indigenous Vruksha Bank",
+    primaryRole: "Collects fruit & forest seeds for native Western Ghats reforestation",
+    address: "78, 'Yashendu', Deshmukh Colony Camp, Satara – 415001 (Field Nurseries in Pune & Satara)",
+    city: "Satara & Pune",
+    state: "Maharashtra",
+    phone: "+91-7715953222",
+    altPhone: "+91-9822290760",
+    email: "info@sahyadridevrai.org",
+    website: "https://sahyadridevrai.org",
+    acceptedSeeds: ["Mango", "Jamun", "Custard Apple", "Jackfruit", "Tamarind", "Banyan"],
+    donationsReceived: 145000,
     rating: 5.0,
     verified: true
   },
   {
-    id: "ngo-annadana",
-    name: "Annadana Soil & Seed Savers",
-    tagline: "Preserving Open-Pollinated Heritage Vegetable Varieties",
-    primaryRole: "Organic seed saving, non-hybrid seeds distribution",
-    address: "Ishana, Gopathi Farms, Singapura, Vidyaranyapura, Bengaluru – 560097",
-    city: "Bengaluru",
-    state: "Karnataka",
-    phone: "+91-8277116606",
-    altPhone: "+91-80-23254400",
-    email: "seedsavers@annadana-india.org",
-    website: "https://annadana-india.org",
-    acceptedSeeds: ["Organic Vegetables", "Medicinal Herbs", "Traditional Greens", "Native Gourds"],
-    donationsReceived: 62000,
+    id: "ngo-baif",
+    name: "BAIF Development Research Foundation",
+    tagline: "Climate-Resilient Agrobiodiversity & Indigenous Germplasm",
+    primaryRole: "Tribal Wadi agroforestry, native fruit orchards & germplasm conservation",
+    address: "BAIF Bhavan, Dr. Manibhai Desai Nagar, Warje, Pune – 411058, Maharashtra",
+    city: "Pune",
+    state: "Maharashtra",
+    phone: "+91-20-25231661",
+    altPhone: "+91-8625081661",
+    email: "baif@baif.org.in",
+    website: "https://baif.org.in",
+    acceptedSeeds: ["Native Mango", "Jamun", "Amla", "Moringa", "Indigenous Pulses & Millets"],
+    donationsReceived: 220000,
     rating: 4.9,
     verified: true
   },
   {
-    id: "ngo-sahaja",
-    name: "Sahaja Samrudha (Sahaja Seeds)",
-    tagline: "Grassroots Organic Farmers' Seed Network",
-    primaryRole: "Community seed banks, farmer empowerment & native species",
-    address: "No. 84, B Block, APMC Yard, Bandipalya, Mysore – 570025, Karnataka",
-    city: "Mysuru & Bengaluru",
-    state: "Karnataka",
-    phone: "+91-7090009911",
-    altPhone: "+91-8867252979",
-    email: "sahajaseeds@gmail.com",
-    website: "https://sahajasamrudha.org",
-    acceptedSeeds: ["Drought-tolerant Crops", "Traditional Vegetables", "Wild Edibles", "Millets"],
-    donationsReceived: 91000,
+    id: "ngo-rahibai",
+    name: "Kalsubai Parisar Seed Bank (Rahibai Popere)",
+    tagline: "Conserving Indigenous Crop Landraces & Wild Edibles",
+    primaryRole: "Community seed bank led by Padma Shri Rahibai Popere (Beej Mata) & Lokpanchayat",
+    address: "Village Kombhalne, Taluka Akole, Dist. Ahilyanagar – 422604 (Support: Lokpanchayat, Sangamner)",
+    city: "Akole & Sangamner",
+    state: "Maharashtra",
+    phone: "+91-9422229215",
+    altPhone: "02425-227134",
+    email: "lokpanchayatsnr@gmail.com",
+    website: "https://lokpanchayat.org",
+    acceptedSeeds: ["Heirloom Tomatoes", "Native Okra", "Wild Edibles", "Red Spinach", "Native Beans"],
+    donationsReceived: 95000,
+    rating: 5.0,
+    verified: true
+  },
+  {
+    id: "ngo-vanarai",
+    name: "Vanarai (वनराई)",
+    tagline: "People's Movement for Afforestation & Watershed Restoration",
+    primaryRole: "Distributes & raises indigenous tree seedlings for barren hill greening",
+    address: "498, Aditya Residency, Mitramandal Chowk, Parvati, Pune – 411009, Maharashtra",
+    city: "Pune",
+    state: "Maharashtra",
+    phone: "+91-20-24420351",
+    altPhone: "+91-9822290760",
+    email: "contact@vanarai.org",
+    website: "https://vanarai.org",
+    acceptedSeeds: ["Jamun", "Neem", "Tamarind", "Amla", "Moringa", "Forest Canopy Trees"],
+    donationsReceived: 185000,
+    rating: 4.9,
+    verified: true
+  },
+  {
+    id: "ngo-naam",
+    name: "Naam Foundation (नाम फाउंडेशन)",
+    tagline: "Drought-Resilient Community Seed Banks & Farmer Orchards",
+    primaryRole: "Supplies fruit & hardy crop seeds to smallholder farmers across Maharashtra",
+    address: "1132-3, 2nd Floor, Vishnu Darshan, Above Rahul Medical, FC Road, Shivajinagar, Pune – 411016",
+    city: "Pune",
+    state: "Maharashtra",
+    phone: "+91-9881041354",
+    altPhone: "+91-9881041059",
+    email: "connect@naammh.org",
+    website: "https://naammh.org",
+    acceptedSeeds: ["Custard Apple", "Guava", "Moringa", "Drought-Resistant Pulses & Gourds"],
+    donationsReceived: 160000,
+    rating: 4.9,
+    verified: true
+  },
+  {
+    id: "ngo-pdm",
+    name: "Paryavaran Dakshata Mandal (Nisargayan)",
+    tagline: "Konkan Flora, Biodiversity Education & Native Seed Hub",
+    primaryRole: "Nisargayan Bio-Resource Centre preserving Konkan & Western Ghats native flora",
+    address: "Nav Santosh Apt, Naupada, Thane West – 400602 / Nisargayan Centre, Mamnoli, Kalyan, Maharashtra",
+    city: "Thane & Kalyan",
+    state: "Maharashtra",
+    phone: "+91-8446140189",
+    altPhone: "022-25380648",
+    email: "paryavaran.ccm25@gmail.com",
+    website: "https://paryavaran.org",
+    acceptedSeeds: ["Medicinal Herbs (Tulsi, Ashwagandha)", "Native Greens", "Sitaphal", "Jamun"],
+    donationsReceived: 78000,
     rating: 4.8,
-    verified: true
-  },
-  {
-    id: "ngo-givemetrees",
-    name: "Give Me Trees Trust",
-    tagline: "Largest Community Tree Planting Movement (Peepal Baba)",
-    primaryRole: "Massive urban and rural native forest creation",
-    address: "33/9 Harsha Compound, Loni Road Ind. Area, Mohan Nagar, Ghaziabad, UP – 201007",
-    city: "Ghaziabad & Delhi-NCR",
-    state: "Uttar Pradesh",
-    phone: "+91-9811258150",
-    altPhone: "+91-9811258195",
-    email: "info@givemetrees.org",
-    website: "https://givemetrees.org",
-    acceptedSeeds: ["Neem", "Jamun", "Peepal", "Banyan", "Amaltas", "Moringa"],
-    donationsReceived: 180000,
-    rating: 4.9,
-    verified: true
-  },
-  {
-    id: "ngo-sankalptaru",
-    name: "SankalpTaru Foundation",
-    tagline: "Planting Fruit Orchards for Rural Livelihoods",
-    primaryRole: "Agroforestry, farmer fruit-tree plantation & geo-tagging",
-    address: "Plot 4, Bima Vihar, IT Park Road, Dehradun – 248013, Uttarakhand",
-    city: "Dehradun (Pan-India)",
-    state: "Uttarakhand",
-    phone: "+91-7409999111",
-    altPhone: "+91-135-2607888",
-    email: "wishy@sankalptaru.org",
-    website: "https://sankalptaru.org",
-    acceptedSeeds: ["Guava", "Pomegranate", "Mango", "Amla", "Custard Apple"],
-    donationsReceived: 210000,
-    rating: 5.0,
     verified: true
   }
 ];
@@ -378,25 +378,25 @@ const SEED_SAVING_GUIDE = [
   {
     step: "01",
     title: "Collect from Ripe, Healthy Produce",
-    icon: "🍎",
+    icon: "assets/icons/seed.svg",
     summary: "Always source seeds from fully ripened, non-diseased fruits and vegetables. Avoid F1 hybrid store produce whose seeds yield poor, sterile plants; pick desi, local, or organic produce."
   },
   {
     step: "02",
     title: "Clean & Remove Pulp Thoroughly",
-    icon: "💧",
+    icon: "assets/icons/droplet.svg",
     summary: "Wash fruit seeds (Mango, Jamun, Sitaphal) vigorously in cool water. For tomatoes and melons, ferment in water for 2 days to strip away the germination-inhibiting gelatinous sheath, then rinse."
   },
   {
     step: "03",
     title: "Sun Dry for 48 - 72 Hours",
-    icon: "☀️",
+    icon: "assets/icons/sun.svg",
     summary: "Spread seeds across a cotton cloth or paper towel under direct gentle sunlight or shaded well-ventilated dry space until moisture content drops below 8%. Never bake or microwave seeds!"
   },
   {
     step: "04",
     title: "Pack in Breathable Paper Envelopes",
-    icon: "✉️",
+    icon: "assets/icons/paper-bag.svg",
     summary: "Store in moisture-free brown paper envelopes or cloth bags with a pinch of dry wood ash or neem leaf powder to deter weevils and fungus. Label with plant name, variety, and collection date."
   }
 ];

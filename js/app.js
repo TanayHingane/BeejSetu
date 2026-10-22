@@ -1,6 +1,6 @@
 /**
- * SeedBridge - Interactive Application Logic
- * Modern White & Green Seed Donation and Ordering Platform
+ * BeejSetu (बीजसेतु) - Interactive Application Logic
+ * Indigenous Seed Donation and Agroforestry Platform
  */
 
 // Application State
@@ -79,7 +79,7 @@ function renderSeedCatalog() {
   if (filtered.length === 0) {
     gridEl.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🌱</div>
+        <div style="margin-bottom: 1rem;"><img src="assets/icons/seed.svg" width="48" height="48" alt=""></div>
         <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--green-900);">No seeds found matching your query</h3>
         <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try adjusting your search terms or filter category.</p>
         <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="resetCatalogFilters()">Reset All Filters</button>
@@ -89,14 +89,17 @@ function renderSeedCatalog() {
   }
 
   gridEl.innerHTML = filtered.map(seed => {
-    const inCart = AppState.cart.some(item => item.id === seed.id);
+    const categoryIcon = seed.category === 'fruit' ? 'tree.svg' : (seed.category === 'vegetable' ? 'sprout.svg' : 'seed.svg');
+    const recipientNgo = seed.acceptedBy && seed.acceptedBy.length > 0 ? seed.acceptedBy[0] : 'Maharashtra Partner Nurseries';
     return `
       <article class="seed-card" data-seed-id="${seed.id}">
         ${seed.badge ? `<span class="seed-card-badge">${seed.badge}</span>` : ''}
         
         <div>
           <div class="seed-card-header">
-            <div class="seed-icon-circle">${seed.icon}</div>
+            <div class="seed-icon-circle">
+              <img src="assets/icons/${categoryIcon}" width="26" height="26" alt="${seed.categoryLabel}">
+            </div>
             <div class="seed-title-box">
               <h3>${seed.name}</h3>
               <p class="seed-hindiName">${seed.hindiName}</p>
@@ -105,8 +108,8 @@ function renderSeedCatalog() {
 
           <div class="seed-meta-tags">
             <span class="tag-badge" style="background: var(--green-100); color: var(--green-800);">${seed.categoryLabel}</span>
-            <span class="tag-badge">☀️ ${seed.season}</span>
-            <span class="tag-badge">⚡ ${seed.difficulty}</span>
+            <span class="tag-badge">${seed.season}</span>
+            <span class="tag-badge">${seed.difficulty}</span>
           </div>
 
           <p class="seed-desc">${seed.description}</p>
@@ -119,19 +122,53 @@ function renderSeedCatalog() {
           </div>
         </div>
 
-        <div class="seed-card-footer">
-          <div class="stock-indicator">
-            <span class="stock-dot"></span>
-            <span>${seed.stockPackets} pkts available</span>
+        <div class="seed-card-footer" style="display: flex; flex-direction: column; gap: 0.65rem; align-items: stretch; border-top: 1px solid var(--border-light); padding-top: 0.85rem;">
+          <div style="font-size: 0.78rem; color: var(--green-900); background: var(--bg-sage); padding: 0.45rem 0.65rem; border-radius: var(--radius-sm); border: 1px solid var(--border-green); display: flex; align-items: center; justify-content: space-between;">
+            <span style="display: flex; align-items: center; gap: 0.35rem; color: var(--text-muted); font-size: 0.75rem;">
+              <img src="assets/icons/tree.svg" width="13" height="13" alt="">
+              <span>Nurtured by:</span>
+            </span>
+            <strong style="color: var(--green-800); font-size: 0.78rem;">${recipientNgo}</strong>
           </div>
           
-          <button class="btn ${inCart ? 'btn-secondary' : 'btn-primary'}" style="padding: 0.6rem 1.1rem; font-size: 0.85rem;" onclick="toggleCartItem('${seed.id}')">
-            ${inCart ? '✓ Added' : '+ Add to Box'}
+          <button class="btn btn-primary" style="width: 100%; font-size: 0.88rem; padding: 0.65rem 1rem;" onclick="prefillDonationForSeed('${seed.id}')">
+            Donate This Seed Variety →
           </button>
         </div>
       </article>
     `;
   }).join('');
+}
+
+function prefillDonationForSeed(seedId) {
+  const seed = SEED_DATABASE.find(s => s.id === seedId);
+  if (!seed) return;
+
+  const categorySelect = document.getElementById('donationSeedCategory');
+  if (categorySelect) {
+    if (seed.category === 'fruit') {
+      categorySelect.value = 'Fruit Tree Seeds';
+    } else if (seed.category === 'vegetable') {
+      categorySelect.value = 'Heirloom Vegetable Seeds';
+    } else if (seed.category === 'medicinal') {
+      categorySelect.value = 'Medicinal & Forest Seeds';
+    }
+  }
+
+  const varietyInput = document.getElementById('donationSeedVariety');
+  if (varietyInput) {
+    varietyInput.value = `${seed.name} (${seed.hindiName})`;
+  }
+
+  if (seed.acceptedBy && seed.acceptedBy.length > 0) {
+    AppState.selectedNgoForDonation = seed.acceptedBy[0];
+  }
+
+  AppState.currentWizardStep = 1;
+  renderWizardStep();
+
+  scrollToSection('donate-section');
+  showToast(`Selected ${seed.name}! Ready to complete your seed donation.`);
 }
 
 function resetCatalogFilters() {
@@ -171,7 +208,7 @@ function toggleCartItem(seedId) {
       categoryLabel: seed.categoryLabel,
       qty: 1
     });
-    showToast(`Added ${seed.name} to your seed box! 🌿`);
+    showToast(`Added ${seed.name} to your seed box!`);
   }
 
   saveCart();
@@ -214,7 +251,7 @@ function updateCartUI() {
   if (AppState.cart.length === 0) {
     drawerBody.innerHTML = `
       <div class="cart-empty-state">
-        <div class="cart-empty-icon">🧺</div>
+        <div class="cart-empty-icon" style="margin-bottom: 0.75rem;"><img src="assets/icons/basket.svg" width="44" height="44" alt=""></div>
         <h4>Your Seed Box is Empty</h4>
         <p style="font-size: 0.85rem; margin-top: 0.5rem;">Explore the catalog and select native fruit or heirloom vegetable seeds to plant.</p>
         <button class="btn btn-primary" style="margin-top: 1.25rem;" onclick="closeCartDrawer(); scrollToSection('catalog-section');">Browse Seeds</button>
@@ -230,7 +267,9 @@ function updateCartUI() {
     <div class="cart-items-list">
       ${AppState.cart.map(item => `
         <div class="cart-item">
-          <div class="cart-item-icon">${item.icon}</div>
+          <div class="cart-item-icon">
+            <img src="assets/icons/seed.svg" width="22" height="22" alt="">
+          </div>
           <div class="cart-item-info">
             <h4>${item.name}</h4>
             <p>${item.categoryLabel} • Free distribution</p>
@@ -293,8 +332,11 @@ function renderOrderSummaryList() {
   if (!summaryEl) return;
 
   summaryEl.innerHTML = AppState.cart.map(i => `
-    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.4rem;">
-      <span>${i.icon} ${i.name} (x${i.qty})</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; margin-bottom: 0.5rem;">
+      <span style="display: flex; align-items: center; gap: 0.4rem;">
+        <img src="assets/icons/seed.svg" width="16" height="16" alt="">
+        <strong>${i.name}</strong> (x${i.qty})
+      </span>
       <span style="color: var(--green-700); font-weight: 700;">Free / Community</span>
     </div>
   `).join('');
@@ -343,7 +385,7 @@ function submitOrderForm(e) {
   // Close order form modal and open receipt
   closeOrderCheckoutModal();
   showOrderSuccessModal(orderRecord);
-  showToast("Order placed successfully! Seeds will be dispatched soon. 🌿");
+  showToast("Order placed successfully! Seeds will be dispatched soon.");
 }
 
 function showOrderSuccessModal(order) {
@@ -362,7 +404,7 @@ function showOrderSuccessModal(order) {
       <div style="margin-bottom: 0.5rem; font-size: 0.9rem;"><strong>Planting Purpose:</strong> ${order.purpose}</div>
       <div style="margin-top: 1rem; border-top: 1px dashed var(--border-light); padding-top: 0.75rem;">
         <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Packets in package:</div>
-        ${order.items.map(it => `<div style="font-size: 0.88rem; font-weight: 600;">• ${it.icon} ${it.name} (${it.qty} pkt)</div>`).join('')}
+        ${order.items.map(it => `<div style="font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; margin-top: 0.25rem;"><img src="assets/icons/seed.svg" width="15" height="15" alt=""> ${it.name} (${it.qty} pkt)</div>`).join('')}
       </div>
     </div>
   `;
@@ -460,7 +502,7 @@ function submitDonationWizard(e) {
   const variety = document.getElementById('donationSeedVariety').value;
   const quantity = document.getElementById('donationQuantity').value;
   const mode = document.getElementById('donationDeliveryMode').value;
-  const targetNgo = AppState.selectedNgoForDonation || "WePlant / Partner Network";
+  const targetNgo = AppState.selectedNgoForDonation || "Sahyadri Devrai / Maharashtra Partner Network";
 
   const donationId = 'SB-DON-' + Math.floor(100000 + Math.random() * 900000);
   const donationRecord = {
@@ -487,7 +529,7 @@ function submitDonationWizard(e) {
 
   // Show Certificate Modal
   showCertificateModal(donationRecord);
-  showToast("Thank you for giving life back to earth! Certificate ready. 🌳");
+  showToast("Thank you for giving life back to earth! Certificate ready.");
 
   // Reset form
   document.getElementById('donation-wizard-form').reset();
@@ -533,9 +575,15 @@ function renderNgoDirectory() {
         <div class="ngo-card-header">
           <div class="ngo-title">
             <h3>${ngo.name}</h3>
-            <p class="ngo-role">📍 ${ngo.city}</p>
+            <p class="ngo-role" style="display: flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem;">
+              <img src="assets/icons/map-pin.svg" width="13" height="13" alt="">
+              <span>${ngo.city}</span>
+            </p>
           </div>
-          <span class="verified-badge">✓ Verified Partner</span>
+          <span class="verified-badge" style="display: flex; align-items: center; gap: 0.35rem;">
+            <img src="assets/icons/shield-check.svg" width="13" height="13" alt="">
+            <span>Verified Partner</span>
+          </span>
         </div>
 
         <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; font-style: italic;">
@@ -543,7 +591,7 @@ function renderNgoDirectory() {
         </p>
 
         <div class="ngo-address-box">
-          <span>🏛️</span>
+          <img src="assets/icons/map-pin.svg" width="16" height="16" style="flex-shrink: 0; margin-top: 2px;" alt="">
           <div>${ngo.address}</div>
         </div>
 
@@ -558,10 +606,12 @@ function renderNgoDirectory() {
       <div>
         <div class="ngo-contacts">
           <div class="ngo-contact-row">
-            <span>📞</span> <a href="tel:${ngo.phone}">${ngo.phone}</a> ${ngo.altPhone ? ` / ${ngo.altPhone}` : ''}
+            <img src="assets/icons/phone.svg" width="14" height="14" alt="">
+            <a href="tel:${ngo.phone}">${ngo.phone}</a> ${ngo.altPhone ? ` / ${ngo.altPhone}` : ''}
           </div>
           <div class="ngo-contact-row">
-            <span>✉️</span> <a href="mailto:${ngo.email}">${ngo.email}</a>
+            <img src="assets/icons/mail.svg" width="14" height="14" alt="">
+            <a href="mailto:${ngo.email}">${ngo.email}</a>
           </div>
         </div>
 
@@ -610,15 +660,15 @@ function calculateGermination() {
   rateEl.innerText = rate + "%";
 
   if (rate >= 80) {
-    verdictEl.innerText = "🌟 Excellent Viability!";
+    verdictEl.innerText = "Excellent Viability";
     verdictEl.style.color = "var(--green-600)";
     adviceEl.innerText = "Prime quality seeds. Perfect for donating to community nurseries or direct planting.";
   } else if (rate >= 60) {
-    verdictEl.innerText = "👍 Moderate Viability";
+    verdictEl.innerText = "Moderate Viability";
     verdictEl.style.color = "var(--amber-600)";
     adviceEl.innerText = "Good for planting. Sow slightly more densely to ensure a high germination rate.";
   } else {
-    verdictEl.innerText = "⚠️ Low Viability";
+    verdictEl.innerText = "Low Viability";
     verdictEl.style.color = "#DC2626";
     adviceEl.innerText = "Seeds may be old or improperly dried. Check moisture before packaging.";
   }
@@ -658,9 +708,12 @@ function renderActivityList() {
   if (totalActions === 0) {
     container.innerHTML = `
       <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
-        <div style="font-size: 3rem; margin-bottom: 0.75rem;">🌱</div>
-        <h4>No Past Activity Yet</h4>
-        <p style="font-size: 0.85rem; margin-top: 0.35rem;">When you donate seeds or place an order, your contributions will appear here.</p>
+        <div style="margin-bottom: 0.75rem;"><img src="assets/icons/award.svg" width="44" height="44" alt=""></div>
+        <h4>No Seed Donations Yet</h4>
+        <p style="font-size: 0.85rem; margin-top: 0.35rem;">When you donate seeds, your contributions, recipient NGOs, and certificates will appear here.</p>
+        <button class="btn btn-primary" style="margin-top: 1.25rem; font-size: 0.88rem;" onclick="closeActivityDrawer(); scrollToSection('donate-section');">
+          Start Your First Seed Donation →
+        </button>
       </div>
     `;
     return;
@@ -669,30 +722,42 @@ function renderActivityList() {
   let html = '';
 
   if (AppState.donations.length > 0) {
-    html += `<h4 style="font-size: 0.95rem; font-weight: 700; color: var(--green-900); margin-bottom: 0.75rem;">Seed Donations</h4>`;
+    html += `<h4 style="font-size: 0.95rem; font-weight: 700; color: var(--green-900); margin-bottom: 0.75rem;">Seed Donations &amp; Certificates</h4>`;
     html += AppState.donations.map(don => `
-      <div class="activity-item">
-        <div class="act-left">
-          <div class="act-icon">🎁</div>
-          <div class="act-info">
-            <h4>${don.variety} (${don.quantity} seeds)</h4>
-            <p>${don.id} • ${don.date} • Destined: ${don.targetNgo}</p>
+      <div class="activity-item" style="display: flex; flex-direction: column; gap: 0.5rem; align-items: stretch;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+          <div class="act-left" style="display: flex; gap: 0.75rem; align-items: center;">
+            <div class="act-icon" style="flex-shrink: 0;">
+              <img src="assets/icons/seed.svg" width="22" height="22" alt="">
+            </div>
+            <div class="act-info">
+              <h4>${don.variety} (${don.quantity})</h4>
+              <p>${don.id} • ${don.date} • Destined: ${don.targetNgo}</p>
+            </div>
           </div>
+          <span class="status-badge received">${don.status}</span>
         </div>
-        <span class="status-badge received">${don.status}</span>
+        <div style="display: flex; justify-content: flex-end; border-top: 1px dashed var(--border-light); padding-top: 0.4rem;">
+          <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.3rem 0.65rem; display: inline-flex; align-items: center; gap: 0.35rem;" onclick="viewDonationCertificate('${don.id}')">
+            <img src="assets/icons/award.svg" width="13" height="13" alt="">
+            <span>View Certificate</span>
+          </button>
+        </div>
       </div>
     `).join('');
   }
 
   if (AppState.orders.length > 0) {
-    html += `<h4 style="font-size: 0.95rem; font-weight: 700; color: var(--green-900); margin: 1.5rem 0 0.75rem;">Seed Requests</h4>`;
+    html += `<h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin: 1.5rem 0 0.75rem;">Archived Activity</h4>`;
     html += AppState.orders.map(ord => `
       <div class="activity-item">
         <div class="act-left">
-          <div class="act-icon">📦</div>
+          <div class="act-icon">
+            <img src="assets/icons/package.svg" width="22" height="22" alt="">
+          </div>
           <div class="act-info">
-            <h4>${ord.totalPackets} Seed Packets</h4>
-            <p>${ord.id} • ${ord.date} • ${ord.purpose}</p>
+            <h4>${ord.totalPackets || 1} Seed Packet(s)</h4>
+            <p>${ord.id} • ${ord.date} • ${ord.purpose || 'Community'}</p>
           </div>
         </div>
         <span class="status-badge processing">${ord.status}</span>
@@ -701,6 +766,13 @@ function renderActivityList() {
   }
 
   container.innerHTML = html;
+}
+
+function viewDonationCertificate(donationId) {
+  const donation = AppState.donations.find(d => d.id === donationId);
+  if (!donation) return;
+  closeActivityDrawer();
+  showCertificateModal(donation);
 }
 
 /* ==========================================================================
@@ -750,7 +822,7 @@ function showToast(message) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<span>🌿</span> <span>${message}</span>`;
+  toast.innerHTML = `<img src="assets/icons/seed.svg" width="16" height="16" alt="" style="filter: brightness(0) invert(1);"> <span>${message}</span>`;
   container.appendChild(toast);
 
   setTimeout(() => {
